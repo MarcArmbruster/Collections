@@ -43,8 +43,6 @@ list.Add(7.45m);
 |More dynamic than an array|Add/Remove slower than an Array (due to resizing)|
 |Can contain different types|Maybe requires casting due to non typed data|
 
-A good reference is:<br/> 
-https://www.geeksforgeeks.org/c-sharp-array-vs-arraylist/?ref=lbp
 ### -> BitArray
 ### -> HashTable
 ### -> Queue
