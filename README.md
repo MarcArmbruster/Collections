@@ -3,7 +3,7 @@
 This repository tries to list well known collection types and  describes the each pros and cons of the different collection types.
 The list may not contain all collection types of .NET 7, but most of it.
 
-## Array
+## -> Array
 Array is the ultimate base for collection types and is still an important collection.
 The class Array itself is an abstract base class you cannot instantiate directly.
 But you can create arrays simply by using the  bracket notation.
