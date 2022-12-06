@@ -44,6 +44,19 @@ list.Add(7.45m);
 |Can contain different types|Maybe requires casting due to non typed data|
 
 ### -> BitArray
+>A BitArray is a specialized array to manage boolean values.
+>A BitArray provides built-in support for logical operations like And, Or, Not, Xor, Shift ....
+
+Example:<br/>
+```
+BitArray bitArray = new BitArray(5, true);
+bitArray.Not(); // switch all 5 flags from true to false
+```
+
+|Pros |Cons |
+|:---|:---|
+|Comfortable logic functions|No support of nullable booleans|
+
 ### -> HashTable
 ### -> Queue
 ### -> SortedList
