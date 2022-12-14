@@ -1,4 +1,4 @@
-﻿namespace TestProject
+﻿namespace TestProject.Collections.Collections
 {
     using System.Collections;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -21,7 +21,7 @@
             BitArray bitArrayOne = new BitArray(5, false);
             BitArray bitArrayTwo = new BitArray(new bool[5] { true, true, true, true, true });
 
-            CollectionAssert.AreEqual(bitArrayOne.Not(), bitArrayTwo);            
+            CollectionAssert.AreEqual(bitArrayOne.Not(), bitArrayTwo);
         }
     }
 }

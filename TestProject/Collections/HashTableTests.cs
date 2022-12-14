@@ -1,4 +1,4 @@
-﻿namespace TestProject
+﻿namespace TestProject.Collections.Collections
 {
     using System;
     using System.Collections;
@@ -18,7 +18,7 @@
             Hashtable hashtable = new Hashtable();
             hashtable.Add("key1", "any value");
             hashtable.Add(1m, "value1m");
-            hashtable.Add((int)1, 345.6456m);
+            hashtable.Add(1, 345.6456m);
 
             Assert.AreEqual(3, hashtable.Count);
         }
@@ -38,7 +38,7 @@
         [TestMethod]
         public void LoadPerformanceBigTest()
         {
-            for (int step = 1000000; step < 1000000; step+=10000)
+            for (int step = 1000000; step < 1000000; step += 10000)
             {
                 Dictionary<long, string> dict = new Dictionary<long, string>();
                 Hashtable hashtable = new Hashtable();
@@ -63,7 +63,7 @@
                 stopwatchHash.Stop();
 
                 Assert.IsTrue(
-                    stopwatchDict.ElapsedMilliseconds <= stopwatchHash.ElapsedMilliseconds, 
+                    stopwatchDict.ElapsedMilliseconds <= stopwatchHash.ElapsedMilliseconds,
                     $"Failed for {step}");
             }
         }

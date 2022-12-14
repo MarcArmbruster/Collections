@@ -72,8 +72,23 @@ hashtable.Add((int)1, 345.6456m);
 |:---|:---|
 |Supports any type and cross type keys|For big data amounts the HashTable has lower performance than a generic Dictionary<T,K>|
 
-
 ### -> Queue
+>A (non-generic) Queue represents a first in-first out implementation for mixed types.
+>It can be used as a working buffer and therefore can avoid blocking situations and a decoupling of sender and receiver.
+
+Example:<br/>
+```
+Queue queue = new Queue();
+queue.Enqueue(1);
+queue.Enqueue("zwei");
+queue.Enqueue(3m);
+```
+
+|Pros |Cons |
+|:---|:---|
+|Easy first in-first out collection for any (mixed) type of data|Not type safe. Requires type analyzation and/or casting|
+
+
 ### -> SortedList
 ### -> Stack
 
