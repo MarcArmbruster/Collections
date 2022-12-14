@@ -58,6 +58,21 @@ bitArray.Not(); // switch all 5 flags from true to false
 |Comfortable logic functions|No support of nullable booleans|
 
 ### -> HashTable
+>A hashtable manages key-value pairs, where both key and value can be of any type. Keys must have a unique hash value.
+
+Example:<br/>
+```
+Hashtable hashtable = new Hashtable();
+hashtable.Add("key1", "any value");
+hashtable.Add(1m, "value1m");
+hashtable.Add((int)1, 345.6456m);
+```
+
+|Pros |Cons |
+|:---|:---|
+|Supports any type and cross type keys|For big data amounts the HashTable has lower performance than a generic Dictionary<T,K>|
+
+
 ### -> Queue
 ### -> SortedList
 ### -> Stack
