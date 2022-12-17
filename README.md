@@ -60,12 +60,11 @@ System.Collections.Specialized
 # The collections in more detail
 
 ## 0. Array
-Array is the ultimate base for collection types and is still an important collection.
-The class Array itself is an abstract base class you cannot instantiate directly.
-But you can create arrays simply by using the  bracket notation.
+>Array is the ultimate base for collection types and is still an important collection.
+>The class Array itself is an abstract base class you cannot instantiate directly.
+>But you can create arrays simply by using the  bracket notation.
 
-example (array of strings)
-
+Example:<br/>
 One dimensional:
 ```
 string[] stringArray= new string[100];
@@ -78,6 +77,8 @@ string[] stringArray= new string[20, 100, 50];
 |Pros |Cons |
 |:---|:---|
 |Arrays have a minimal overhead and therefore are very fast and has low energy consumption by default.|Arrays has a very low usage comfort. |
+
+><a href="https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/">Array on MS Learn<a>
 
 
 ## System.Collections
@@ -172,7 +173,7 @@ Assert.AreEqual("four", sortedList.GetByIndex(3));
 |A good choice if you need an automatic sorted collection|Sorting is represented by a lower performance than some other collections|
 |Custom Comparers can be used, especially for mixedtypes|-|
 
-### -> Stack
+### 6. Stack
 >Represents a very simple last-in-first-out non-generic collection of objects.
 Example:<br/>
 ```
@@ -191,49 +192,83 @@ Assert.AreEqual("One", stack.Pop());
 |Very simple to use|Throws an exceptio on Pop() if collection is empty|
 
 
-
 ## System.Collections.Concurrent
-### -> BlockingCollection
-### -> ConcurrentBag
-### -> ConcurrentDictionary
-### -> ConcurrentQueue
-### -> ConcurrentStack
+### 7. BlockingCollection
+
+<a href="https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/blockingcollection-overview">BlockingCollection on MS Learn<a>
+
+### 8. ConcurrentBag
+todo
+### 9. ConcurrentDictionary
+todo
+### 10. ConcurrentQueue
+todo
+### 11. ConcurrentStack
+todo
 
 ## System.Collections.Generic
-### -> Dictionary
-### -> HashSet
-### -> LinkedList
-### -> List
-### -> PriorityQueue
-### -> Queue
-### -> SortedDictionary
-### -> SortedList
-### -> SortedSet
-### -> Stack
+### 12. Dictionary
+todo
+### 13. HashSet
+todo
+### 14. LinkedList
+todo
+### 15. List
+todo
+### 16. PriorityQueue
+todo
+### 17. Queue
+todo
+### 18. SortedDictionary
+todo
+### 19. SortedList
+todo
+### 20. SortedSet
+todo
+### 21. Stack
+todo
 
 ## System.Collections.Immutable
 All immutable collections are provided as a generic and non-generic implementation!
-### -> ImmutableArray
-### -> ImmutableDictionary
-### -> ImmutableHashSet
-### -> ImmutableList
-### -> ImmutableQueue
-### -> ImmutableSortedDictionary
-### -> ImmutableSortedSet
-### -> ImmutableStack
+### 22. ImmutableArray
+todo
+### 23. ImmutableDictionary
+todo
+### 24. ImmutableHashSet
+todo
+### 25. ImmutableList
+todo
+### 26. ImmutableQueue
+todo
+### 27. ImmutableSortedDictionary
+todo
+### 28. ImmutableSortedSet
+todo
+### 29. ImmutableStack
+todo
 
 ## System.Collections.ObjectModel
-### -> KeyedCollection
-### -> ObservableCollection
+### 30. KeyedCollection
+todo
+### 31. ObservableCollection
 see also ObservableCollectionExt of WpfCommandAggregator
-### -> ReadOnlyDictionary
-### -> ReadOnlyObservableCollection
+todo
+### 32. ReadOnlyDictionary
+todo
+### 33. ReadOnlyObservableCollection
+todo
 
 ## System.Collections.Specialized
-### -> HybridDictionary
-### -> ListDictionary
-### -> NameValueCollection
-### -> OrderedDictionary
-### -> StringCollection
-### -> StringDictionary
+### 34. HybridDictionary
+todo
+### 35. ListDictionary
+todo
+### 36. NameValueCollection
+todo
+### 37. OrderedDictionary
+todo
+### 38. StringCollection
+todo
+### 39. StringDictionary
+todo
  
