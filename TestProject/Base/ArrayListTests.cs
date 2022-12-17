@@ -1,4 +1,4 @@
-namespace TestProject
+namespace TestProject.Collections.Base
 {
     using System.Collections;
 
@@ -6,7 +6,7 @@ namespace TestProject
     public class ArrayListTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ArrayListTest()
         {
             ArrayList list = new ArrayList();
             list.Add("one");

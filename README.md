@@ -1,9 +1,65 @@
-# Collections
+# Overview and short discussion of C# collections
 
 This repository tries to list well known collection types and  describes the each pros and cons of the different collection types.
-The list may not contain all collection types of .NET 7, but most of it.
+The list may not contain all collection types of **.NET 7**, but most of it.
 
-## -> Array
+Base Collection
+- Array
+
+Non-Generic Collections
+- ArrayList
+- BitArray
+- HashTable
+- Queue
+- SortedList
+- Stack
+
+System.Collections.Concurrent
+- BlockingCollection
+- ConcurrentBag
+- ConcurrentDictionary
+- ConcurrentQueue
+- ConcurrentStack
+
+System.Collections.Generic
+- Dictionary
+- HashSet
+- LinkedList
+- List
+- PriorityQueue
+- Queue
+- SortedDictionary
+- SortedList
+- SortedSet
+- Stack
+
+System.Collections.Immutable
+- ImmutableArray
+- ImmutableDictionary
+- ImmutableHashSet
+- ImmutableList
+- ImmutableQueue
+- ImmutableSortedDictionary
+- ImmutableSortedSet
+- ImmutableStack
+
+System.Collections.ObjectModel
+- KeyedCollection
+- ObservableCollection
+- ReadOnlyDictionary
+- ReadOnlyObservableCollection
+
+System.Collections.Specialized
+- HybridDictionary
+- ListDictionary
+- NameValueCollection
+- OrderedDictionary
+- StringCollection
+- StringDictionary
+
+# The collections in more detail
+
+## 0. Array
 Array is the ultimate base for collection types and is still an important collection.
 The class Array itself is an abstract base class you cannot instantiate directly.
 But you can create arrays simply by using the  bracket notation.
@@ -26,7 +82,7 @@ string[] stringArray= new string[20, 100, 50];
 
 ## System.Collections
 This namespace contains non-generic collection types.
-### -> ArrayList
+### 1. ArrayList
 >An ArrayList works similar to an array, but manages its size itself by adding/removing items.
 >An important difference is the possibility to store items of different types into the same instance of an ArrayList.
 
@@ -43,7 +99,7 @@ list.Add(7.45m);
 |More dynamic than an array|Add/Remove slower than an Array (due to resizing)|
 |Can contain different types|Maybe requires casting due to non typed data|
 
-### -> BitArray
+### 2. BitArray
 >A BitArray is a specialized array to manage boolean values.
 >A BitArray provides built-in support for logical operations like And, Or, Not, Xor, Shift ....
 
@@ -57,7 +113,7 @@ bitArray.Not(); // switch all 5 flags from true to false
 |:---|:---|
 |Comfortable logic functions|No support of nullable booleans|
 
-### -> HashTable
+### 3. HashTable
 >A hashtable manages key-value pairs, where both key and value can be of any type. Keys must have a unique hash value.
 
 Example:<br/>
@@ -72,7 +128,7 @@ hashtable.Add((int)1, 345.6456m);
 |:---|:---|
 |Supports any type and cross type keys|For big data amounts the HashTable has lower performance than a generic Dictionary<T,K>|
 
-### -> Queue
+### 4. Queue
 >A (non-generic) Queue represents a first in-first out implementation for mixed types.
 >It can be used as a working buffer and therefore can avoid blocking situations and a decoupling of sender and receiver.
 
@@ -89,8 +145,52 @@ queue.Enqueue(3m);
 |Easy first in-first out collection for any (mixed) type of data|Not type safe. Requires type analyzation and/or casting|
 
 
-### -> SortedList
+### 5. SortedList
+
+>A (non-generic) SortedList works similar to a collection of Key-Value-Pairs..
+>The great advantage is the automatic sorting of the entries by key values.
+>For mixed type keys an individual comparer can be used.
+
+Example:<br/>
+```
+IComparer comparer = new NumericComparer();
+
+SortedList sortedList = new SortedList(comparer);
+sortedList.Add(2, "two");
+sortedList.Add(4L, "four");
+sortedList.Add("1", 1);
+sortedList.Add(3m, 3m);
+
+Assert.AreEqual(1, sortedList.GetByIndex(0));
+Assert.AreEqual("two", sortedList.GetByIndex(1));
+Assert.AreEqual(3m, sortedList.GetByIndex(2));
+Assert.AreEqual("four", sortedList.GetByIndex(3));
+```
+
+|Pros |Cons |
+|:---|:---|
+|A good choice if you need an automatic sorted collection|Sorting is represented by a lower performance than some other collections|
+|Custom Comparers can be used, especially for mixedtypes|-|
+
 ### -> Stack
+>Represents a very simple last-in-first-out non-generic collection of objects.
+Example:<br/>
+```
+Stack stack = new Stack();
+stack.Push("One");
+stack.Push(2m);
+stack.Push(3L);
+
+Assert.AreEqual(3L, stack.Pop());
+Assert.AreEqual(2m, stack.Pop());
+Assert.AreEqual("One", stack.Pop());
+```
+
+|Pros |Cons |
+|:---|:---|
+|Very simple to use|Throws an exceptio on Pop() if collection is empty|
+
+
 
 ## System.Collections.Concurrent
 ### -> BlockingCollection
